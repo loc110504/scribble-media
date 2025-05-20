@@ -29,7 +29,7 @@ from val_2D import test_all_case_2D
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 parser = argparse.ArgumentParser()
 parser.add_argument('--root_path', type=str,
-                    default='/mnt/data/HM/Datasets/ACDC2017/ACDC_for2D', help='Data root path')
+                    default='/data/Datasets/ACDC2017/ACDC_for2D', help='Data root path')
 parser.add_argument('--data_type', type=str,
                     default='Heart', help='Data category')
 parser.add_argument('--data_name', type=str,
