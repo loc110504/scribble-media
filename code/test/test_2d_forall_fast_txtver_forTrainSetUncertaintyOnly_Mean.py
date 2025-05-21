@@ -21,12 +21,12 @@ import random
 import matplotlib.pyplot as plt
 
 from networks.net_factory import net_factory
-from uttils import calculate_metric_percase, logInference, get_rgb_from_uncertainty, get_the_first_k_largest_components
+from DMSPS.code.test.utils import calculate_metric_percase, logInference, get_rgb_from_uncertainty, get_the_first_k_largest_components
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_root_path', type=str,
-                    default='/mnt/data/HM/Datasets/ACDC2017/ACDC_for2D', help='Data root path') 
+                    default='../../data/ACDC2017/ACDC_for2D', help='Data root path') 
 parser.add_argument('--data_type', type=str,
                     default='Heart', help='Data category')
 parser.add_argument('--data_name', type=str,

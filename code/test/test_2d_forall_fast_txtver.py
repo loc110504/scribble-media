@@ -20,12 +20,12 @@ import logging
 import pandas as pd
 
 from networks.net_factory import net_factory
-from test.uttils import calculate_metric_percase, logInference
+from utils import calculate_metric_percase, logInference
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_root_path', type=str,
-                    default='/mnt/data/HM/Datasets/ACDC2017/ACDC_for2D', help='Data root path') 
+                    default='../../data/ACDC2017/ACDC', help='Data root path') 
 parser.add_argument('--data_type', type=str,
                     default='Heart', help='Data category')
 parser.add_argument('--data_name', type=str,
@@ -116,8 +116,8 @@ def Inference(FLAGS, test_save_path):
     logging.info("test volume num:{}".format(len(image_list)))
 
     #definite and load net model
-    snapshot_path = "../../model/{}_{}/{}_{}".format(
-        FLAGS.data_type, FLAGS.data_name, FLAGS.exp, FLAGS.model)
+    snapshot_path = "../../model/{}_{}/{}_{}_{}".format(
+        FLAGS.data_type, FLAGS.data_name, FLAGS.exp, FLAGS.model, FLAGS.fold)
     net = net_factory(net_type = FLAGS.model, in_chns=1,
                       class_num=FLAGS.num_classes)
     save_mode_path = os.path.join(

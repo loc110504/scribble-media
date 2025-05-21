@@ -23,7 +23,7 @@ import logging
 
 # from networks.efficientunet import UNet
 from networks.net_factory_3d import net_factory_3d
-from uttils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
+from DMSPS.code.test.utils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
 
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"

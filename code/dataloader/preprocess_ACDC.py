@@ -14,7 +14,7 @@ from preprocess_WORD import get_3d_bounding_box
 from skimage import exposure
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-data_root = "/mnt/data/HM/Datasets/ACDC2017/ACDC"
+data_root = "../../data/ACDC2017/ACDC_for2D"
 # data_root = "/mnt/data/HM/Datasets/ACDC2017/ACDC_resample"
 
 
@@ -73,7 +73,7 @@ def show_images_info(img_dir ="train"):
 
 def MedicalImages_deal(image_root, validImg_flag = False, percent=0.99, resample=True):
         input_root = image_root
-        output_root = input_root + "_N2" 
+        output_root = input_root + "_N" 
         if not os.path.exists(output_root):
             os.makedirs(output_root)
         img_input_list = sorted(glob.glob(input_root + "/*.nii.gz"))     
@@ -243,9 +243,9 @@ def image_resample(subdir = "train"):
             sitk.WriteImage(resampled_img, output_dir + '/' + img_name)
 
 if __name__ == "__main__":
-    func = 5
+    func = 2
     imgdir_list=["train", "val", "TestSet"]#140,30,30
-    imgdir = imgdir_list[0]
+    imgdir = imgdir_list[2]
     
     if func == 1:
         show_images_info(imgdir)

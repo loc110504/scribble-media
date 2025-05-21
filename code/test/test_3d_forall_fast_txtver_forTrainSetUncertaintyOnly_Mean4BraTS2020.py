@@ -24,7 +24,7 @@ from PIL import Image
 import random
 
 from networks.net_factory_3d import net_factory_3d
-from test.uttils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
+from DMSPS.code.test.utils import calculate_metric_percase, logInference, get_the_first_k_largest_components, get_rgb_from_uncertainty
 from test_3d_forall_fast_txtver_forTrainSetUncertaintyOnly_Mean import pred_single_case_3d_forTrainUncertainty
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
