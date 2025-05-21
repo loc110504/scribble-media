@@ -1,9 +1,9 @@
-*result
-*_example
-*_ACDC
-*__pycache__
-# *_slices
-# *_volumes
-*metrics_fast*
-*figure*
-*Abdomen*
+# *result
+# *_example
+# *_ACDC
+# *__pycache__
+# # *_slices
+# # *_volumes
+# *metrics_fast*
+# *figure*
+# *Abdomen*
